@@ -12,20 +12,27 @@ z=0
 flist = []
 cList = []
 # while x < 100:
-print('How far in the Fibonacci sequence would you like to go?')
-fibDistance = input()
-for i in range (int(fibDistance)):
+print('How far in the Fibonacci sequence would you like to go?', end=' ')
+fibDistance = int(input())
+ofibdist=fibDistance
+while int(fibDistance) > 0:
     y=x+z # 1,1,0
-    #print(y)
     flist = flist + [y]
+    fibDistance = fibDistance - 1
+    if fibDistance == 0:
+        break
     z=x+y # 2,1,1
-    #print(z)
     flist = flist + [z]
+    fibDistance = fibDistance - 1
+    if fibDistance == 0:
+        break
     x=y+z # 3,2,1
-    #print(x)
     flist = flist + [x]
+    fibDistance = fibDistance - 1
+    if fibDistance == 0:
+        break
 
-for i in range(int(fibDistance)*3):
+for i in range(int(ofibdist)):
     turns = 0
     output = 0
     number = flist[i]
