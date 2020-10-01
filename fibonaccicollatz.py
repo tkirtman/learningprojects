@@ -16,15 +16,14 @@ print('How far in the Fibonacci sequence would you like to go?')
 fibDistance = input()
 for i in range (int(fibDistance)):
     y=x+z # 1,1,0
-    print(y)
+    #print(y)
     flist = flist + [y]
     z=x+y # 2,1,1
-    print(z)
+    #print(z)
     flist = flist + [z]
     x=y+z # 3,2,1
-    print(x)
+    #print(x)
     flist = flist + [x]
-print(flist)
 
 for i in range(int(fibDistance)*3):
     turns = 0
@@ -34,6 +33,10 @@ for i in range(int(fibDistance)*3):
         collatz(number)
         number = output
         turns = turns + 1
-    distance = str(turns)
+    distance = int(turns)
     cList = cList + [distance]
-    print(cList)
+    
+print('Fibonacci sequence: ', end=' ') 
+print(flist)
+print('Collatz distances:  ', end=' ')
+print(cList)
